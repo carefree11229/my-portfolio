@@ -256,7 +256,8 @@
         'images/AIGC作品/AI视频/Duanju Video.mp4',
         'images/AIGC作品/AI视频/法天象地.mp4',
         'images/AIGC作品/AI视频/法师.mp4',
-        'images/AIGC作品/AI视频/雨夜废墟双剑侠对轰.mp4'
+        'images/AIGC作品/AI视频/雨夜废墟双剑侠对轰.mp4',
+        'images/AIGC作品/AI视频/Ai人物视频.mp4'
       ]
     },
     {
