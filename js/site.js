@@ -252,12 +252,12 @@
       desc: 'AI视频生成工具创作的动态影像作品。',
       tags: ['ChatGPT', '即梦AI', '可灵', '豆包'],
       media: [
+        'images/AIGC作品/AI视频/Ai人物视频.mp4',
         'images/AIGC作品/AI视频/ai_video_01.mp4',
         'images/AIGC作品/AI视频/Duanju Video.mp4',
         'images/AIGC作品/AI视频/法天象地.mp4',
         'images/AIGC作品/AI视频/法师.mp4',
-        'images/AIGC作品/AI视频/雨夜废墟双剑侠对轰.mp4',
-        'images/AIGC作品/AI视频/Ai人物视频.mp4'
+        'images/AIGC作品/AI视频/雨夜废墟双剑侠对轰.mp4'
       ]
     },
     {
@@ -410,23 +410,14 @@
     var chips = document.getElementById('works-chips');
     if (!chips) return;
     var links = Array.prototype.slice.call(chips.querySelectorAll('a'));
-    var sections = CATEGORIES.map(function (cat) {
-      return document.getElementById('sec-' + cat.key);
+    links.forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.forEach(function (x) {
+          x.classList.remove('active');
+        });
+        a.classList.add('active');
+      });
     });
-
-    function update() {
-      var mark = window.scrollY + 140;
-      var current = CATEGORIES[0].key;
-      sections.forEach(function (sec, i) {
-        if (sec && sec.offsetTop <= mark) current = CATEGORIES[i].key;
-      });
-      links.forEach(function (a) {
-        a.classList.toggle('active', a.getAttribute('data-target') === current);
-      });
-    }
-
-    window.addEventListener('scroll', update, { passive: true });
-    update();
   }
 
   renderWorks();
