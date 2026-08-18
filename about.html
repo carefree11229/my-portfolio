@@ -4,108 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>全息档案 | 卢炜鑫</title>
-  <link rel="stylesheet" href="css/void.css">
+  <meta http-equiv="refresh" content="0;url=index.html#bio">
   <style>
-    body { background: var(--void); cursor: none; }
-    #data-stream { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-    
-    /* Top-right nav */
-    .top-nav {
-      position: fixed; top: 1.2rem; right: 1.5rem; z-index: 200;
-      display: flex; gap: 0.4rem; align-items: center;
-    }
-    .top-nav a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.1em;
-      color: var(--white-dim); padding: 0.35rem 0.9rem;
-      border: 1px solid var(--glass-border); border-radius: 20px;
-      transition: all 0.3s; text-decoration: none;
-    }
-    .top-nav a:hover, .top-nav a.active {
-      color: var(--cyan); border-color: var(--cyan);
-      box-shadow: 0 0 15px var(--cyan-dim);
-      background: var(--cyan-dim);
-    }
-    
-    .page-content { position: relative; z-index: 10; padding-top: 4rem; }
+    body{margin:0;background:#010412;color:#dceaf6;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
   </style>
 </head>
 <body>
-
-<canvas id="data-stream"></canvas>
-<div class="scanlines"></div>
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-
-<nav class="top-nav">
-  <a href="index.html">HOME</a>
-  <a href="about.html" class="active">BIO</a>
-  <a href="skills.html">NEURAL</a>
-  <a href="portfolio.html">WORKS</a>
-</nav>
-
-<div class="page-content">
-<section class="section" id="about">
-  <div class="about-inner" style="max-width:880px;margin:0 auto;padding:2rem 2rem 6rem;">
-    <div class="section-label reveal-el">// BIO_SCAN</div>
-    <h2 class="section-title-main reveal-el delay-1" style="font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:2.5rem;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">全息档案</h2>
-    
-    <div class="holo-card reveal-el delay-2">
-      <div class="holo-scan"></div>
-      <div class="holo-grid">
-        <div class="holo-avatar-wrap">
-          <div class="holo-avatar-ring"></div>
-          <div class="holo-avatar"><img src="images/简历照.jpg" alt="" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:3rem;display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--cyan)>卢</span>'"></div>
-        </div>
-        <div class="holo-info">
-          <div class="holo-name">卢炜鑫</div>
-          <div class="holo-tagline">3D角色/场景/道具美术 · 游戏关卡设计师 · AIGC设计师</div>
-          <div class="holo-datalist">
-            <div class="holo-data"><div class="data-label">出生年月</div><div class="data-value">2004年1月</div></div>
-            <div class="holo-data"><div class="data-label">电话</div><div class="data-value">13651427001</div></div>
-            <div class="holo-data"><div class="data-label">邮箱</div><div class="data-value">551803929@qq.com</div></div>
-            <div class="holo-data"><div class="data-label">微信</div><div class="data-value">13651427001</div></div>
-            <div class="holo-data"><div class="data-label">地址</div><div class="data-value">深圳市宝安区</div></div>
-            <div class="holo-data"><div class="data-label">学院</div><div class="data-value">汕头大学·长江艺术与设计学院</div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="timeline-v2">
-        <div class="tl-item reveal-el"><h4>汕头大学 · 数字媒体艺术专业 · 本科</h4><div class="tl-role">2022—2026</div><p>主修三维动画设计、影视后期制作、数字图像处理及交互设计等，学科基础扎实，创作经验丰富。</p></div>
-        <div class="tl-item reveal-el delay-1"><h4>潮汕功夫茶文化数字化创新传承与推广</h4><div class="tl-role">项目负责人（团队5人）·蓝桥杯设计比赛三等奖</div><p>校级大创立项。IP全流程设计、潮玩衍生开发、文化符号数字化。核心IP："功功壶"和"英歌舞"。</p></div>
-        <div class="tl-item reveal-el delay-2"><h4>妈屿岛服务设计</h4><div class="tl-role">团队成员</div><p>用户体验地图、文化触点设计、服务蓝图。</p></div>
-        <div class="tl-item reveal-el delay-3"><h4>韩江流域爱心救援杆设计</h4><div class="tl-role">团队成员</div><p>公共设施设计、地域文化融合、3D动态演示。</p></div>
-        <div class="tl-item reveal-el delay-4"><h4>深圳市雪莲花艺术文化有限公司</h4><div class="tl-role">用户体验实习生</div><p>制作用户体验地图，文化触点设计，服务蓝图。</p></div>
-        <div class="tl-item reveal-el delay-5"><h4>深圳市图为技术有限公司</h4><div class="tl-role">三维美术设计实习生</div><p>场景三维建模，虚拟仿真设计，平台设计。</p></div>
-      </div>
-      
-      <div class="dl-btn-wrap reveal-el delay-6"><button class="dl-btn" id="dl-resume"><span class="dl-icon dl-pulse">⬇</span><span>DOWNLOAD RESUME // PDF</span></button></div>
-    </div>
-  </div>
-</section>
-</div>
-
-<script src="js/void.js"></script>
-<script>
-  // Data stream background
-  (function(){var c=document.getElementById('data-stream');if(!c)return;var ctx=c.getContext('2d'),w,h;function rs(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}rs();window.addEventListener('resize',rs);var m={x:-9999,y:-9999};document.addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY});var ps=[];for(var i=0;i<120;i++)ps.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*1.5+0.3,sp:Math.random()*0.5+0.2,hue:185+Math.random()*40,a:Math.random()*0.5+0.1});function dr(){ctx.clearRect(0,0,w,h);ps.forEach(function(p){p.y-=p.sp;var dx=m.x-p.x,dy=m.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<200){var f=(200-dist)/200;p.x+=dx*f*0.02;p.y+=dy*f*0.02}if(p.y<-20){p.y=h+20;p.x=Math.random()*w}ctx.beginPath();ctx.fillStyle='hsla('+p.hue+',80%,65%,'+p.a+')';ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill()});requestAnimationFrame(dr)}dr();})();
-  
-  // Cursor
-  var cr=document.getElementById('cursor'),cd=document.getElementById('cursor-dot'),cx=0,cy=0,cdx=0,cdy=0;
-  document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;if(cd){cd.style.left=cx+'px';cd.style.top=cy+'px'}});
-  function ac(){cdx+=(cx-cdx)*0.12;cdy+=(cy-cdy)*0.12;if(cr){cr.style.left=cdx+'px';cr.style.top=cdy+'px'}requestAnimationFrame(ac)}ac();
-  
-  // Reveal
-  var o=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');o.unobserve(en.target)}})},{threshold:0.1});
-  document.querySelectorAll('.reveal-el,.tl-item').forEach(function(el){o.observe(el)});
-  
-  // Download
-  document.getElementById('dl-resume').addEventListener('click',function(){var a=document.createElement('a');a.href='简历.pdf';a.download='卢炜鑫_简历.pdf';a.click()});
-  
-  // Glitch avatar
-  var av=document.querySelector('.holo-avatar');if(av){av.addEventListener('mouseenter',function(){av.classList.add('glitch-img');setTimeout(function(){av.classList.remove('glitch-img')},300)})}
-</script>
-<script src="js/trail.js"></script>
+  <p>正在打开全息档案…</p>
+  <script>location.replace('index.html#bio');</script>
 </body>
 </html>

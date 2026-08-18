@@ -3,90 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>技能神经网络 | 卢炜鑫</title>
-  <link rel="stylesheet" href="css/void.css">
+  <title>技能 | 卢炜鑫</title>
+  <meta http-equiv="refresh" content="0;url=index.html#works">
   <style>
-    body { background: var(--void); cursor: none; }
-    #data-stream { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-    .top-nav {
-      position: fixed; top: 1.2rem; right: 1.5rem; z-index: 200;
-      display: flex; gap: 0.4rem;
-    }
-    .top-nav a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.1em;
-      color: var(--white-dim); padding: 0.35rem 0.9rem;
-      border: 1px solid var(--glass-border); border-radius: 20px;
-      transition: all 0.3s; text-decoration: none;
-    }
-    .top-nav a:hover, .top-nav a.active {
-      color: var(--cyan); border-color: var(--cyan);
-      box-shadow: 0 0 15px var(--cyan-dim);
-      background: var(--cyan-dim);
-    }
-    .page-content { position: relative; z-index: 10; padding-top: 4rem; }
-    #neural-canvas {
-      width: 90%; max-width: 1000px; height: 450px;
-      display: block; margin: 0 auto;
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      background: rgba(0,229,255,0.01);
-    }
+    body{margin:0;background:#010412;color:#dceaf6;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
   </style>
 </head>
 <body>
-
-<canvas id="data-stream"></canvas>
-<div class="scanlines"></div>
-<div id="cursor"></div>
-<div id="cursor-dot"></div>
-
-<nav class="top-nav">
-  <a href="index.html">HOME</a>
-  <a href="about.html">BIO</a>
-  <a href="skills.html" class="active">NEURAL</a>
-  <a href="portfolio.html">WORKS</a>
-</nav>
-
-<div class="page-content">
-<section class="section" id="skills">
-  <div class="skills-inner" style="max-width:1000px;margin:0 auto;padding:2rem 2rem 6rem;text-align:center">
-    <div class="section-label reveal-el">// NEURAL_MAP</div>
-    <h2 class="section-title-main reveal-el delay-1" style="font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:2.5rem;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">技能神经网络</h2>
-    <canvas id="neural-canvas" class="reveal-el delay-2"></canvas>
-  </div>
-</section>
-</div>
-
-<script>
-(function() {
-  // Data stream background
-  var c=document.getElementById('data-stream');if(!c)return;var ctx=c.getContext('2d'),w,h;function rs(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}rs();window.addEventListener('resize',rs);var m={x:-9999,y:-9999};document.addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY});var ps=[];for(var i=0;i<120;i++)ps.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*1.5+0.3,sp:Math.random()*0.5+0.2,hue:185+Math.random()*40,a:Math.random()*0.5+0.1});function dr(){ctx.clearRect(0,0,w,h);ps.forEach(function(p){p.y-=p.sp;var dx=m.x-p.x,dy=m.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<200){var f=(200-dist)/200;p.x+=dx*f*0.02;p.y+=dy*f*0.02}if(p.y<-20){p.y=h+20;p.x=Math.random()*w}ctx.beginPath();ctx.fillStyle='hsla('+p.hue+',80%,65%,'+p.a+')';ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill()});requestAnimationFrame(dr)}dr();
-  
-  // Cursor
-  var cr=document.getElementById('cursor'),cd=document.getElementById('cursor-dot'),cx=0,cy=0,cdx=0,cdy=0;
-  document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;if(cd){cd.style.left=cx+'px';cd.style.top=cy+'px'}});
-  function ac(){cdx+=(cx-cdx)*0.12;cdy+=(cy-cdy)*0.12;if(cr){cr.style.left=cdx+'px';cr.style.top=cdy+'px'}requestAnimationFrame(ac)}ac();
-  
-  // Reveal
-  var o=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');o.unobserve(en.target)}})},{threshold:0.1});
-  document.querySelectorAll('.reveal-el').forEach(function(el){o.observe(el)});
-  
-  // Neural Network (fixed DPR)
-  var nnCanvas=document.getElementById('neural-canvas');if(!nnCanvas)return;
-  var nnCtx=nnCanvas.getContext('2d'),dpr=window.devicePixelRatio||1;
-  function rn(){var rect=nnCanvas.parentElement.getBoundingClientRect(),nw=Math.min(rect.width-40,1000),nh=450;nnCanvas.width=nw*dpr;nnCanvas.height=nh*dpr;nnCanvas.style.width=nw+'px';nnCanvas.style.height=nh+'px';nnCtx.setTransform(dpr,0,0,dpr,0,0);return{w:nw,h:nh}}
-  var dims=rn();window.addEventListener('resize',function(){dims=rn()});
-  var names=['3ds Max','ZBrush','Blender','RizomUV','Marmoset','Substance 3D','Photoshop','Unity','C#','剪映','即梦 AI','可灵','DEEPSEEK','Claude Code','Codex'];
-  var cats=['3D','3D','3D','3D','3D','3D','设计','引擎','引擎','剪辑','AI','AI','AI','AI','AI'];
-  var nodes=names.map(function(n,i){return{name:n,cat:cats[i],x:Math.random()*(dims.w-100)+50,y:Math.random()*(dims.h-100)+50,vx:0,vy:0,r:34+Math.random()*10}});
-  var conns=[];for(var i=0;i<nodes.length;i++)for(var j=i+1;j<nodes.length;j++)if(nodes[i].cat===nodes[j].cat)conns.push({a:i,b:j});
-  var mn={x:-9999,y:-9999};nnCanvas.addEventListener('mousemove',function(e){var r=nnCanvas.getBoundingClientRect();mn.x=e.clientX-r.left;mn.y=e.clientY-r.top});nnCanvas.addEventListener('mouseleave',function(){mn.x=-9999;mn.y=-9999});
-  function sim(){for(var i=0;i<nodes.length;i++){var n=nodes[i],mdx=mn.x-n.x,mdy=mn.y-n.y,md=Math.sqrt(mdx*mdx+mdy*mdy);if(md<120&&md>0){var f=(120-md)/120*3;n.vx-=(mdx/md)*f;n.vy-=(mdy/md)*f}for(var j=0;j<nodes.length;j++){if(i===j)continue;var dx=n.x-nodes[j].x,dy=n.y-nodes[j].y,dist=Math.sqrt(dx*dx+dy*dy)||1,minD=n.r+nodes[j].r;if(dist<minD+30){var f2=(minD+30-dist)/(minD+30)*0.5;n.vx+=(dx/dist)*f2;n.vy+=(dy/dist)*f2}}conns.forEach(function(co){var o=co.a===i?nodes[co.b]:(co.b===i?nodes[co.a]:null);if(!o)return;var dx=o.x-n.x,dy=o.y-n.y,dist=Math.sqrt(dx*dx+dy*dy)||1;if(dist>80){var f3=(dist-80)*0.001;n.vx+=(dx/dist)*f3;n.vy+=(dy/dist)*f3}});n.vy+=0.04;if(n.x<n.r){n.x=n.r;n.vx*=-0.5}if(n.x>dims.w-n.r){n.x=dims.w-n.r;n.vx*=-0.5}if(n.y<n.r){n.y=n.r;n.vy*=-0.5}if(n.y>dims.h-n.r){n.y=dims.h-n.r;n.vy*=-0.5}n.x+=n.vx;n.y+=n.vy;n.vx*=0.9;n.vy*=0.9}}
-  function draw(){nnCtx.clearRect(0,0,dims.w,dims.h);conns.forEach(function(co){var a=nodes[co.a],b=nodes[co.b],dx=a.x-b.x,dy=a.y-b.y,dist=Math.sqrt(dx*dx+dy*dy),al=Math.max(0.05,1-dist/300);nnCtx.beginPath();nnCtx.strokeStyle='rgba(0,229,255,'+(al*0.3)+')';nnCtx.lineWidth=0.8;nnCtx.moveTo(a.x,a.y);nnCtx.lineTo(b.x,b.y);nnCtx.stroke()});nodes.forEach(function(n){var d2m=Math.sqrt((mn.x-n.x)**2+(mn.y-n.y)**2),isH=d2m<n.r+5;nnCtx.beginPath();nnCtx.arc(n.x,n.y,n.r+(isH?8:2),0,Math.PI*2);nnCtx.fillStyle=isH?'rgba(139,47,255,0.15)':'rgba(0,229,255,0.04)';nnCtx.fill();nnCtx.beginPath();nnCtx.arc(n.x,n.y,n.r,0,Math.PI*2);nnCtx.fillStyle='rgba(1,1,8,0.85)';nnCtx.fill();nnCtx.strokeStyle=isH?'rgba(139,47,255,0.8)':'rgba(0,229,255,0.3)';nnCtx.lineWidth=isH?2:1;nnCtx.stroke();if(isH){nnCtx.shadowColor='rgba(139,47,255,0.5)';nnCtx.shadowBlur=15;nnCtx.stroke();nnCtx.shadowBlur=0}nnCtx.font='12px JetBrains Mono,monospace';nnCtx.fillStyle=isH?'#fff':'#00e5ff';nnCtx.textAlign='center';nnCtx.textBaseline='middle';nnCtx.fillText(n.name,n.x,n.y)});}
-  function an(){for(var i=0;i<3;i++)sim();draw();requestAnimationFrame(an)}an();
-})();
-</script>
-<script src="js/trail.js"></script>
+  <p>正在打开作品集…</p>
+  <script>location.replace('index.html#works');</script>
 </body>
 </html>
