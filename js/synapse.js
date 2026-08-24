@@ -109,8 +109,16 @@
   var heroVideo = document.getElementById('heroVideo');
   if (heroVideo) {
     var seeking = false;
+    var heroLoaded = false;
     heroVideo.muted = true;
-    heroVideo.currentTime = 0;
+
+    function loadHeroVideo() {
+      if (heroLoaded) return;
+      heroLoaded = true;
+      heroVideo.preload = 'auto';
+      try { heroVideo.load(); } catch (e) {}
+    }
+
     heroVideo.addEventListener('loadedmetadata', function () {
       heroVideo.currentTime = 0;
     });
@@ -127,6 +135,11 @@
       seeking = true;
       heroVideo.currentTime = next;
     }, { passive: true });
+
+    window.addEventListener('mousemove', loadHeroVideo, { passive: true });
+    window.addEventListener('touchstart', loadHeroVideo, { passive: true });
+    window.addEventListener('scroll', loadHeroVideo, { passive: true });
+    setTimeout(loadHeroVideo, 3500);
   }
 
   var cinema = document.getElementById('about');

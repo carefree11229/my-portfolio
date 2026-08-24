@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>卢炜鑫 | Digital Media Portfolio</title>
+  <link rel="preload" href="images/posters/hero-poster.jpg" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
 
   <main>
     <section class="hero" id="hero">
-      <video class="hero-video" id="heroVideo" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_083515_290e5a10-0b95-41af-a5e2-32b6389baa4d.mp4" muted playsinline preload="auto"></video>
+      <video class="hero-video" id="heroVideo" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_083515_290e5a10-0b95-41af-a5e2-32b6389baa4d.mp4" muted playsinline preload="none" poster="images/posters/hero-poster.jpg"></video>
       <div class="dot-grid" aria-hidden="true"></div>
       <div class="watermark" aria-hidden="true">TRANSCENDENCE</div>
       <div class="hero-content">
@@ -57,7 +58,7 @@
     </section>
 
     <section class="cinema" id="about">
-      <video class="bg-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_092455_089c54f8-3b03-4966-9df1-e9746063d0ef.mp4" autoplay muted loop playsinline></video>
+      <video class="bg-video" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_092455_089c54f8-3b03-4966-9df1-e9746063d0ef.mp4" poster="images/posters/about-poster.jpg" muted loop playsinline></video>
       <div class="cinema-overlay" aria-hidden="true"></div>
       <div class="cinema-inner" id="cinemaInner">
         <p class="cinema-text">数字媒体艺术专业本科毕业生，具备 3D 全流程制作与用户体验设计实践经验。从概念到成品，把文化、创意与技术整合为可感知、可交互、可交付的视觉体验。在 AIGC 创作中，我以即梦、可灵、ChatGPT、Claude Code 与 Codex 为主要工具，完成从概念构想、提示词迭代到成品交付的完整闭环：让文字创意变成网站、影像、界面和可运行的数字产品，并在多轮人机协作中持续校准作品的风格、结构与完成度。</p>
@@ -65,7 +66,7 @@
     </section>
 
     <section class="metrics" id="metrics">
-      <video class="bg-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_095810_ecea3dd2-fc5e-4e41-8696-4219290b6589.mp4" autoplay muted loop playsinline></video>
+      <video class="bg-video" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_095810_ecea3dd2-fc5e-4e41-8696-4219290b6589.mp4" poster="images/posters/metrics-poster.jpg" muted loop playsinline></video>
       <div class="section-content">
         <div class="section-kicker reveal">Performance Metrics</div>
         <div class="metrics-grid">
@@ -98,7 +99,7 @@
     </section>
 
     <section class="tech" id="tech">
-      <video class="bg-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_095750_32a52ce0-2005-45c9-9093-41f03fde9530.mp4" autoplay muted loop playsinline></video>
+      <video class="bg-video" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_095750_32a52ce0-2005-45c9-9093-41f03fde9530.mp4" poster="images/posters/tech-poster.jpg" muted loop playsinline></video>
       <div class="tech-content">
         <div class="tech-top">
           <h2 class="section-title reveal">创作 / 全流程</h2>
@@ -144,7 +145,7 @@
 
   <footer class="footer">
     <div class="footer-video">
-      <video class="bg-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_080203_fd7f4f85-3a86-4837-8192-85e7bfe68e75.mp4" autoplay muted loop playsinline></video>
+      <video class="bg-video" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_080203_fd7f4f85-3a86-4837-8192-85e7bfe68e75.mp4" poster="images/posters/footer-poster.jpg" muted loop playsinline></video>
     </div>
     <div class="footer-info">
       <div class="footer-top">
@@ -159,7 +160,7 @@
   </footer>
 </div>
 
-<script src="js/site.js?v=3"></script>
-<script src="js/synapse.js"></script>
+<script src="js/site.js?v=4"></script>
+<script src="js/synapse.js?v=4"></script>
 </body>
 </html>
