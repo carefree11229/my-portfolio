@@ -252,13 +252,13 @@
       desc: 'AI视频生成工具创作的动态影像作品。',
       tags: ['ChatGPT', '即梦AI', '可灵', '豆包'],
       media: [
+        'images/AIGC作品/AI视频/特事局 第一季 第一集.mp4',
         'images/AIGC作品/AI视频/Ai人物视频.mp4',
         'images/AIGC作品/AI视频/ai_video_01.mp4',
         'images/AIGC作品/AI视频/Duanju Video.mp4',
         'images/AIGC作品/AI视频/法天象地.mp4',
         'images/AIGC作品/AI视频/法师.mp4',
-        'images/AIGC作品/AI视频/雨夜废墟双剑侠对轰.mp4',
-        'images/AIGC作品/AI视频/特事局 第一季 第一集.mp4'
+        'images/AIGC作品/AI视频/雨夜废墟双剑侠对轰.mp4'
       ]
     },
     {
